@@ -1,0 +1,9 @@
+package abstractfactory;
+
+public class CheckboxA extends Checkbox {
+    public void display() {
+        System.out.println("+---+");
+        System.out.println("|   |  " +  this.text);
+        System.out.println("+---+");
+    }
+}

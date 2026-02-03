@@ -5,6 +5,8 @@ public abstract class Map {
     private int height = 9;
     private Tile[][] tiles = new Tile[this.height][this.width];
 
+    public abstract Tile createTile();
+
     public Map() {
         for (int y = 0; y < this.height; y++) {
             for (int x = 0; x < this.width; x++) {
@@ -22,5 +24,4 @@ public abstract class Map {
         }
     }
 
-    public abstract Tile createTile();
 }
