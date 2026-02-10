@@ -9,7 +9,6 @@ public class WeatherStation extends Observable implements Runnable {
     private final int MAX_TEMP = 30;
     private final int MIN_TEMP = -30;
     private Random rand = new Random();
-    private List<Observer> observers = new ArrayList<>();
 
     public WeatherStation() {
         this.temp = rand.nextInt(MAX_TEMP - MIN_TEMP) + MIN_TEMP;
