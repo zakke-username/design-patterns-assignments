@@ -26,12 +26,10 @@ public class FibonacciIterator implements Iterator<Integer> {
             index++;
             return 1;
         }
-
-        int next = this.sequence.getNextNumber(previous, current);
-        previous = this.current;
+        int next = sequence.getNextNumber(previous, current);
+        previous = current;
         current = next;
         index++;
-
         return next;
     }
 }

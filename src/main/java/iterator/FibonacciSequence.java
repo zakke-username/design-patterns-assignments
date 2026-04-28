@@ -4,10 +4,10 @@ import java.util.Iterator;
 
 public class FibonacciSequence implements Sequence {
 
-    private int length = 0;
+    private int length;
 
     public FibonacciSequence(int length) {
-        this.length = length;
+        this.length = Math.max(length, 0);
     }
 
     public int getNextNumber(int prev, int curr) {
