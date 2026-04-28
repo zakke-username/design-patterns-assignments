@@ -28,15 +28,18 @@ public class ApiFacade {
 
             // Parse attribute value
             JSONParser parser = new JSONParser();
-            JSONObject jsonObject = (JSONObject) parser.parse(content.toString());
+            JSONObject jsonObject;
+            try {
+                jsonObject = (JSONObject) parser.parse(content.toString());
+            } catch (Exception e) {
+                throw new IllegalArgumentException("Failed to parse json response");
+            }
             if (!jsonObject.containsKey(attributeName)) {
                 throw new IllegalArgumentException("Attribute not found: " + attributeName);
             }
 
             // Return attribute value as string
             return (String) jsonObject.get(attributeName);
-        } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to parse JSON response: " + e.getMessage());
         } finally {
             con.disconnect();
         }

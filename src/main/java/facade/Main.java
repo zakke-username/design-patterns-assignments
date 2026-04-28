@@ -9,6 +9,8 @@ public class Main {
 
             String baseCurrency = facade.getAttributeValueFromJson("https://api.fxratesapi.com/latest", "base");
             System.out.println("\nBase currency:\n" + baseCurrency);
+
+            String test = facade.getAttributeValueFromJson("https://api.asdfasdf.io/", "base");
         } catch (Exception e) {
             e.printStackTrace();
         }
